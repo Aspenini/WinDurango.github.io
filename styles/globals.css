@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'X360';
+  src: url('/fonts/X360.ttf') format('truetype');
+}
+
+body {
+  font-family: 'X360', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+a {
+  color: #107C10;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header, .footer {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.header {
+  border-bottom: 1px solid #107C10;
+}
+
+.footer {
+  border-top: 1px solid #107C10;
+  margin-top: 2rem;
+}
