@@ -5,7 +5,7 @@ export default function Header() {
     <header className="header">
       <nav className="bg-xboxBlack p-4 flex justify-between items-center">
         <div className="flex space-x-4">
-          {['Blog', 'Compatibility List', 'Downloads', 'FAQ'].map((link, index) => (
+          {['Compatibility List', 'Downloads', 'FAQ'].map((link, index) => (
             <motion.a
               key={index}
               href={`/${link.toLowerCase().replace(' ', '')}`}
