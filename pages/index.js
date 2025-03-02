@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
       <main className="flex flex-col items-center justify-center min-h-screen">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-xbox mt-4">WinDurango</h1>
-        <p className="text-lg md:text-xl lg:text-2xl mt-2 text-center">Xbox One compatibility layer for Windows</p>
+        <p className="text-lg md:text-xl lg:text-2xl mt-2 text-center">The First Xbox One compatibility layer for Windows!</p>
         <div className="mt-8 flex space-x-4">
           <a
             href="/learn-more"
