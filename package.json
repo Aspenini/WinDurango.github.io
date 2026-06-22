@@ -1,0 +1,23 @@
+{
+  "name": "windurango-static-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4321",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4321",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "svelte": "^5.56.3"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "sass": "^1.101.0",
+    "svelte-check": "^4.6.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16"
+  }
+}

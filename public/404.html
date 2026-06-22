@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found | WinDurango</title>
+    <meta name="description" content="The requested WinDurango page could not be found." />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo/WinDurango.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/32.png" />
+    <meta name="theme-color" content="#107c10" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --text: #f4f8f1;
+        --muted: rgba(244, 248, 241, 0.68);
+        --green: #46d043;
+        --stroke: rgba(255, 255, 255, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: grid;
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        align-content: center;
+        justify-items: start;
+        gap: 16px;
+        padding: 64px min(7vw, 80px);
+        overflow-x: hidden;
+        background:
+          radial-gradient(circle at 18% 76%, rgba(70, 208, 67, 0.28), transparent 34rem),
+          linear-gradient(135deg, #001904, #050705 68%, #000300);
+        color: var(--text);
+        font-family: Inter, "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      img {
+        width: 96px;
+        height: 96px;
+        filter: drop-shadow(0 0 24px rgba(92, 255, 99, 0.38));
+      }
+
+      p,
+      h1 {
+        margin: 0;
+      }
+
+      .eyebrow {
+        color: #c8ffbe;
+        font-size: 0.9rem;
+        font-weight: 850;
+        letter-spacing: 0.08em;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 9vw, 7rem);
+        line-height: 0.92;
+      }
+
+      .copy {
+        max-width: 580px;
+        color: var(--muted);
+        font-size: 1.12rem;
+      }
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 50px;
+        padding: 13px 20px;
+        border: 1px solid var(--stroke);
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--green), #107c10);
+        color: var(--text);
+        font-weight: 850;
+        text-decoration: none;
+        box-shadow: 0 16px 36px rgba(16, 124, 16, 0.32);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="/assets/logo/WinDurango.svg" width="96" height="96" alt="" />
+    <p class="eyebrow">404</p>
+    <h1>Signal lost.</h1>
+    <p class="copy">That route is not part of the static build. Head back to WinDurango.</p>
+    <a href="/">Back to WinDurango</a>
+  </body>
+</html>

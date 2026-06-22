@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "Inter Variable";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("@fontsource-variable/inter/files/inter-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308,
+    U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #050705;
+  --bg-2: #0c100d;
+  --panel: rgba(255, 255, 255, 0.075);
+  --panel-strong: rgba(255, 255, 255, 0.13);
+  --panel-soft: rgba(255, 255, 255, 0.045);
+  --stroke: rgba(255, 255, 255, 0.12);
+  --stroke-strong: rgba(255, 255, 255, 0.38);
+  --text: #f4f8f1;
+  --muted: rgba(244, 248, 241, 0.68);
+  --green: #107c10;
+  --green-2: #46d043;
+  --green-3: #083f0c;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.44);
+  --radius: 24px;
+  --ease: cubic-bezier(0.18, 0.9, 0.22, 1);
+  --max: 1440px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background: #050705;
+  color: var(--text);
+  font-family: "Inter Variable", Inter, "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.5;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+a,
+button {
+  color: inherit;
+  font: inherit;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.13),
+    0 0 0 6px rgba(70, 208, 67, 0.24);
+}
+
+.shell {
+  width: min(calc(100% - 48px), var(--max));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 20;
+  transform: translateY(-150%);
+  padding: 10px 14px;
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  background: rgba(7, 9, 7, 0.88);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 620px) {
+  .shell {
+    width: min(calc(100% - 24px), var(--max));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
