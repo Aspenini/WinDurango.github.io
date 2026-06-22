@@ -18,15 +18,15 @@
 
 .topbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px 24px;
   padding: 36px 0 18px;
 }
 
 .brand,
-.project-nav,
-.actions {
+.project-nav {
   display: flex;
   align-items: center;
 }
@@ -44,7 +44,8 @@
 }
 
 .project-nav {
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 6px;
   padding: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
@@ -164,10 +165,99 @@ h1 {
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.68);
 }
 
-.actions {
-  flex-wrap: wrap;
-  gap: 12px;
+.download {
+  display: grid;
+  gap: 14px;
   margin-top: 34px;
+}
+
+.download-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  color: rgba(244, 248, 241, 0.74);
+  font-size: 0.86rem;
+  font-weight: 760;
+  letter-spacing: 0.01em;
+}
+
+.build-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--green-2);
+  box-shadow: 0 0 12px var(--green-2);
+}
+
+.download-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.build-meta {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  min-width: 0;
+}
+
+.build-title {
+  margin: 0;
+  overflow: hidden;
+  max-width: 46ch;
+  color: rgba(244, 248, 241, 0.92);
+  font-weight: 820;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.build-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 720;
+
+  code {
+    padding: 1px 7px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    font-family: "Segoe UI Mono", ui-monospace, "Cascadia Code", monospace;
+    font-size: 0.86em;
+  }
+}
+
+.download-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 720;
+
+  a {
+    color: #c8ffbe;
+    font-weight: 820;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+}
+
+.download-hint {
+  color: rgba(244, 248, 241, 0.5);
+}
+
+.is-loading {
+  opacity: 0.75;
+  cursor: progress;
 }
 
 .action {
@@ -237,7 +327,9 @@ h1 {
   width: 18px;
   height: 18px;
   flex: 0 0 18px;
-  fill: currentColor;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.18));
 }
 
@@ -291,8 +383,24 @@ h1 {
 }
 
 @media (max-width: 540px) {
-  .actions,
-  .action {
+  .download-row .action {
     width: 100%;
   }
+
+  .build-title {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

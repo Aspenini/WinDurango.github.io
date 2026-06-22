@@ -1,34 +1,41 @@
 <script lang="ts">
   import LinkIcon from "@components/LinkIcon.svelte";
+  import LatestBuild from "@components/LatestBuild.svelte";
   import XboxWaveBackground from "@components/XboxWaveBackground.svelte";
 
-  type IconName = "github" | "docs" | "discord";
+  type IconName = "github" | "docs" | "discord" | "x" | "reddit";
 
   type ProjectLink = {
     label: string;
     href: string;
     icon: IconName;
-    primary: boolean;
   };
 
   const links: ProjectLink[] = [
     {
       label: "GitHub",
       href: "https://github.com/WinDurango/WinDurango",
-      icon: "github",
-      primary: true
+      icon: "github"
     },
     {
       label: "Docs",
       href: "https://github.com/WinDurango/WinDurango#getting-started",
-      icon: "docs",
-      primary: false
+      icon: "docs"
     },
     {
       label: "Discord",
       href: "https://discord.gg/mHN2BgH7MR",
-      icon: "discord",
-      primary: false
+      icon: "discord"
+    },
+    {
+      label: "X",
+      href: "https://x.com/WinDurango",
+      icon: "x"
+    },
+    {
+      label: "Reddit",
+      href: "https://www.reddit.com/r/WinDurango/",
+      icon: "reddit"
     }
   ];
 </script>
@@ -46,7 +53,7 @@
 
     <nav class="project-nav" aria-label="Project links">
       {#each links as link (link.label)}
-        <a href={link.href}>
+        <a href={link.href} target="_blank" rel="noopener noreferrer">
           <LinkIcon name={link.icon} />
           {link.label}
         </a>
@@ -60,14 +67,7 @@
       <h1 id="hero-title">WinDurango</h1>
       <p class="tagline">The world's first Xbox One compatibility layer for Windows.</p>
 
-      <div class="actions" aria-label="Project actions">
-        {#each links as link (link.label)}
-          <a class={link.primary ? "action action--primary" : "action"} href={link.href}>
-            <LinkIcon name={link.icon} />
-            {link.label}
-          </a>
-        {/each}
-      </div>
+      <LatestBuild />
 
       <p class="note">Experimental. Community-built. Not affiliated with Microsoft.</p>
     </div>
