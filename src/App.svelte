@@ -48,11 +48,6 @@
   <XboxWaveBackground />
 
   <header class="topbar shell">
-    <a class="brand" href="/" aria-label="WinDurango home">
-      <img src="{base}assets/logo/WinDurango.svg" width="42" height="42" alt="" />
-      <span>WinDurango</span>
-    </a>
-
     <nav class="project-nav" aria-label="Project links">
       {#each links as link (link.label)}
         <a href={link.href} target="_blank" rel="noopener noreferrer">
@@ -64,14 +59,23 @@
   </header>
 
   <section class="hero shell" aria-labelledby="hero-title">
-    <div class="hero-panel">
-      <p class="kicker">Open-source Xbox One compatibility</p>
-      <h1 id="hero-title">WinDurango</h1>
-      <p class="tagline">The world's first Xbox One compatibility layer for Windows.</p>
+    <div class="hero-layout">
+      <div class="panel hero-panel">
+        <p class="kicker">Open-source Xbox One compatibility</p>
+        <h1 id="hero-title">WinDurango</h1>
+        <p class="tagline">The world's first Xbox One compatibility layer for Windows.</p>
 
-      <LatestBuild />
+        <LatestBuild />
 
-      <p class="note">Experimental. Community-built. Not affiliated with Microsoft.</p>
+        <p class="note">Experimental. Community-built. Not affiliated with Microsoft.</p>
+      </div>
+
+      <div
+        class="panel logo-tile"
+        style="--logo: url('{base}assets/logo/WinDurango.svg')"
+        role="img"
+        aria-label="WinDurango logo"
+      ></div>
     </div>
   </section>
 </main>

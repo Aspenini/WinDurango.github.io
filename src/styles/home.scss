@@ -20,27 +20,14 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px 24px;
   padding: 36px 0 18px;
 }
 
-.brand,
 .project-nav {
   display: flex;
   align-items: center;
-}
-
-.brand {
-  gap: 12px;
-  color: var(--text);
-  font-weight: 850;
-  text-decoration: none;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
-
-  img {
-    filter: drop-shadow(0 0 14px rgba(70, 208, 67, 0.3));
-  }
 }
 
 .project-nav {
@@ -80,15 +67,22 @@
 .hero {
   display: grid;
   align-content: center;
-  justify-items: start;
+  justify-items: center;
   min-height: calc(100svh - 112px);
   padding: clamp(40px, 7vw, 92px) 0 clamp(48px, 7vw, 88px);
 }
 
-.hero-panel {
+.hero-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2.4vw, 28px);
+  width: 100%;
+}
+
+.panel {
   position: relative;
-  width: min(980px, 100%);
-  padding: clamp(24px, 3vw, 42px);
   overflow: hidden;
   border: 1px solid var(--stroke);
   border-radius: calc(var(--radius) + 8px);
@@ -110,6 +104,42 @@
 
   > * {
     position: relative;
+  }
+}
+
+.hero-panel {
+  width: 100%;
+  max-width: 968px;
+  padding: clamp(24px, 3vw, 42px);
+}
+
+.logo-tile {
+  width: min(320px, 72vw);
+  aspect-ratio: 1;
+  background-image: var(--logo);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 76%;
+}
+
+// Side-by-side only once there's room for the text panel plus a full-height
+// square tile beside it. The panel width is fixed here so its height — and thus
+// the square's size — can't feed back into the flex layout.
+@media (min-width: 1640px) {
+  .hero-layout {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .hero-panel {
+    flex: 0 0 auto;
+    width: 968px;
+  }
+
+  .logo-tile {
+    flex: 0 0 auto;
+    align-self: stretch;
+    width: auto;
   }
 }
 
@@ -350,14 +380,11 @@ h1 {
 
 @media (max-width: 760px) {
   .topbar {
-    align-items: flex-start;
-    flex-direction: column;
     padding-top: 18px;
   }
 
   .project-nav {
-    width: 100%;
-    justify-content: space-between;
+    justify-content: center;
 
     a {
       padding-inline: 10px;
