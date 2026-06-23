@@ -3,6 +3,8 @@
   import LatestBuild from "@components/LatestBuild.svelte";
   import XboxWaveBackground from "@components/XboxWaveBackground.svelte";
 
+  const base = import.meta.env.BASE_URL;
+
   type IconName = "github" | "docs" | "discord" | "x" | "reddit";
 
   type ProjectLink = {
@@ -47,7 +49,7 @@
 
   <header class="topbar shell">
     <a class="brand" href="/" aria-label="WinDurango home">
-      <img src="/assets/logo/WinDurango.svg" width="42" height="42" alt="" />
+      <img src="{base}assets/logo/WinDurango.svg" width="42" height="42" alt="" />
       <span>WinDurango</span>
     </a>
 
